@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Form Practice</title>
+</head>
+
+<body>
+
+<form>
+  Full Name:<br>
+  <input type="text" name="name" id ='name'><br>
+  Address:<br>
+  <input type = "text" name="address" id = 'address'><br>
+  Email:<br>
+  <input type = "text" name="email" id = 'email'><br><br>
+  Gender:<br>
+  <input type="radio" name="gender" value="male" id = 'man'> Male<br>
+  <input type="radio" name="gender" value="female" id = 'woman'> Female<br>
+  <input type="radio" name="gender" value="other" id = 'neither'> Other<br><br>
+  <input type="submit" value="Submit" id = 'submit' onClick = 'return results();'> 
+</form>
+
+<script>
+//function runs when user presses submit, and displays user data on the screen
+function results() {
+	var name = document.getElementById('name').value;
+	var email = document.getElementById('email').value;
+	var address = document.getElementById('address').value;
+	
+	if (document.getElementById('man').checked) {
+		gender = document.getElementById('man').value;
+	} else if (document.getElementById('woman').checked) {
+		gender = document.getElementById('woman').value;
+	} else if (document.getElementById('neither').checked) {
+		gender = document.getElementById('neither').value;
+	}
+	
+	document.write('<h2>Thank You for Your Submission</h2>');
+	document.write('Name: ' + name + '<br>');
+	document.write('Email: ' + email + '<br>');
+	document.write('Address: ' + address + '<br>');
+	document.write('Gender: ' + gender);
+};
+</script>
+</body>
+</html>
